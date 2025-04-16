@@ -83,7 +83,7 @@ class HomeController extends Controller
             }
         }
 
-        if ($targettedProductIndex) {
+        if ($targettedProductIndex !== null) {
             unset($products[$targettedProductIndex]);
             $products[] = $updatedProduct;
             
@@ -112,7 +112,7 @@ class HomeController extends Controller
             }
         }
 
-        if ($targettedProductIndex) {
+        if ($targettedProductIndex !== null) {
             unset($products[$targettedProductIndex]);
             
             Storage::disk('public')->put(self::jsonFile, json_encode($products));
